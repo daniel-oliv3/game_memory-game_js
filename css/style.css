@@ -29,8 +29,17 @@ body {
     height: 100%;
     position: absolute;
     border-radius: 10px;
+    transition: all 1s;
 }
 
 .back {
     background: url("../img/verso.jpg");
+}
+
+.back.flipped {
+    transform: rotateY(180deg);
+}
+
+.card:hover {
+    box-shadow: 0 0 10px #aaa;
 }
