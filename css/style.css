@@ -22,6 +22,7 @@ body {
     height: 240px;
     position: absolute;
     border-radius: 10px;
+    perspective: 600px;
 }
 
 .face {
@@ -30,6 +31,7 @@ body {
     position: absolute;
     border-radius: 10px;
     transition: all 1s;
+    backface-visibility: hidden;
 }
 
 .back {
@@ -38,6 +40,15 @@ body {
 
 .back.flipped {
     transform: rotateY(180deg);
+}
+
+.front {
+    background: url("../img/0.jpg");
+    transform: rotateY(-180deg);
+}
+
+.front.flipped {
+    transform: rotateY(0deg);
 }
 
 .card:hover {
