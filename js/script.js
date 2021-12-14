@@ -15,6 +15,8 @@
 	
 	//função de inicialização do jogo
 	function startGame(){
+		images = randomSort(images);
+
 		var frontFaces = document.getElementsByClassName("front");
 
 		//posicionamento das cartas
@@ -29,6 +31,24 @@
 			frontFaces[i].setAttribute("id",images[i].id);
 			console.log(frontFaces[i].id);
 		}
+	}
+
+	//função embaralhar as cartas
+	function randomSort(oldArray){
+		//console.log(Math.floor(Math.random()*11));
+		//var arrTeste = ["shape", "truck", "rolamento", "lixa", "rodas"];
+		//console.log(arrTeste.length);
+
+		var newArray = [];
+
+		while(newArray.length !== oldArray.length){
+			var i = Math.floor(Math.random()*oldArray.length);
+
+			if(newArray.indexOf(oldArray[i]) < 0){
+				newArray.push(oldArray[i]);
+			}
+		}
+		return newArray;
 	}
 
     //Rotacionando as Cartas
