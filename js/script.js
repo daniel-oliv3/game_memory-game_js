@@ -1,4 +1,6 @@
 (function(){
+	var matches = 0;
+
 	var images = [];
 
 	var flippedCards = [];
@@ -71,6 +73,13 @@
 			faces[1].classList.toggle("flipped");
 
 			flippedCards.push(this);
+			
+			if(flippedCards.length === 2){
+				if(flippedCards[0].childNodes[3].id === flippedCards[1].childNodes[3].id){
+					alert();
+				}
+			}
+
 		}else{
 			flippedCards[0].childNodes[1].classList.toggle("flipped");
 			flippedCards[0].childNodes[3].classList.toggle("flipped");
