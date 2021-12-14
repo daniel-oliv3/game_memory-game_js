@@ -55,6 +55,10 @@ body {
     box-shadow: 0 0 10px #aaa;
 }
 
+.face.flipped.match {
+    box-shadow: 0 0 10px #0f0;
+}
+
 #modalGameOver {
     position: absolute;
     top: 0;
@@ -66,4 +70,13 @@ body {
 
 #imgGameOver {
     margin-top: 100px;
+}
+
+#imgMatchSign {
+    position: relative;
+    top: 250px;
+    transition-property: top, opacity;
+    transition-duration: 1.5s;
+    opacity: 1;
+    z-index: -1;
 }
