@@ -1,82 +1,84 @@
-* {
-    margin: 0;
-    padding: 0;
+*{
+	margin: 0;
+	padding: 0;
 }
 
-body {
-    background-color: #555;
-    text-align: center;
+body{
+	text-align: center;
+	background-color: #555;
 }
 
-#container {
-    width: 1325px;
-    height: 495px;
-    border: 1px solid #111;
-    position: relative;
-    margin: 10px auto;
-    border-radius: 10px;
-    background-color: #5E4A16;
+#game{
+	position: relative;
+	width: 1325px;
+	height: 495px;
+	border: 1px solid #111;
+	border-radius: 10px;
+	margin: 10px auto;
+	background-color: #563D00;
 }
 
-.card {
-    width: 160px;
-    height: 240px;
-    position: absolute;
-    border-radius: 10px;
-    perspective: 600px;
+.card{
+	width: 160px;
+	height: 240px;
+	perspective: 600px;
+	position: absolute;
+	border-radius: 10px;
 }
 
-.face {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    border-radius: 10px;
-    transition: all 1s;
-    backface-visibility: hidden;
+.face{
+	border-radius: 10px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transition: all 1s;
+	backface-visibility: hidden;
 }
 
-.back {
-    background: url("../img/verso.jpg");
+.front{
+	transform: rotateY(-180deg);
 }
 
-.back.flipped {
-    transform: rotateY(180deg);
+.flipped.front{
+	transform: rotateY(0deg);
 }
 
-.front {
-    transform: rotateY(-180deg);
+.back{
+	background: url(../img/verso.jpg);
 }
 
-.front.flipped {
-    transform: rotateY(0deg);
+.flipped.back{
+	transform: rotateY(180deg);
 }
 
-.card:hover {
-    box-shadow: 0 0 10px #aaa;
+.card:hover, .face.flipped{
+	box-shadow: 0 0 10px #aaa;
 }
 
-.face.flipped.match {
-    box-shadow: 0 0 10px #0f0;
+.face.flipped.match{
+	box-shadow: 0 0 10px #0f0;
 }
 
-#modalGameOver {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: -2;
+#match{
+	position: relative;
+	margin: 0 auto;
+	top: 250px;
+	z-index: -1;
+	opacity: 1;
+	transition-property: top, opacity;
+	transition-duration: 1.5s;
 }
 
-#imgGameOver {
-    margin-top: 100px;
+#gameOver{
+	position: absolute;
+	top: 0;
+	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: -2;
 }
 
-#imgMatchSign {
-    position: relative;
-    top: 250px;
-    transition-property: top, opacity;
-    transition-duration: 1.5s;
-    opacity: 1;
-    z-index: -1;
+#imgGameOver{
+	margin-top: 100px;
 }
